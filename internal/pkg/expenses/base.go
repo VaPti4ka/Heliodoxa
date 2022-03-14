@@ -3,7 +3,7 @@ package expenses
 import (
 	"time"
 
-	"money_schedule/internal/pkg/utils"
+	"github.com/VaPti4ka/Heliodoxa/internal/pkg/utils"
 )
 
 type BaseSpend interface {

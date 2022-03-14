@@ -4,7 +4,7 @@ package deposit
 import (
 	"time"
 
-	"money_schedule/internal/pkg/utils"
+	"github.com/VaPti4ka/Heliodoxa/internal/pkg/utils"
 )
 
 type BaseDeposit interface {
