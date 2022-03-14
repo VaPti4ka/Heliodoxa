@@ -1,13 +1,16 @@
+// Package deposit is
 package deposit
 
 import (
-	"pivoBezVodki/internal/pkg/utils"
 	"time"
+
+	"money_schedule/internal/pkg/utils"
 )
 
 type BaseDeposit interface {
 	CreateNewDeposit() (int64, error)
-	UpdateDeposit() error
+	UpdateDeposit() (Deposit, error)
+	ReadDeposit(id int64) (Deposit, error)
 	DeleteDeposit() error
 }
 
@@ -30,7 +33,7 @@ func (d Deposit) CreateNewDeposit() (int64, error) {
 // ReadDeposit get information about deposit entry from DB
 // Return Deposit struct
 // TODO implement me
-func ReadDeposit(id int64) (Deposit, error) {
+func (d Deposit) ReadDeposit(id int64) (Deposit, error) {
 	var resultDeposit Deposit
 
 	return resultDeposit, nil
@@ -38,8 +41,8 @@ func ReadDeposit(id int64) (Deposit, error) {
 
 // UpdateDeposit find deposit entry in BD by ID and reWrite info from Deposit to DB
 // TODO implement me
-func (d Deposit) UpdateDeposit() error {
-	return nil
+func (d Deposit) UpdateDeposit() (Deposit, error) {
+	return Deposit{}, nil
 }
 
 // DeleteDeposit remove info about deposit from DB

@@ -1,13 +1,15 @@
 package expenses
 
 import (
-	"pivoBezVodki/internal/pkg/utils"
 	"time"
+
+	"money_schedule/internal/pkg/utils"
 )
 
 type BaseSpend interface {
 	CreateNewSpend() (int64, error)
-	UpdateSpend() error
+	UpdateSpend() (Spend, error)
+	ReadSpend(id int64) (Spend, error)
 	DeleteSpend() error
 }
 
@@ -28,7 +30,7 @@ func (s Spend) CreateNewSpend() (int64, error) {
 
 // ReadSpend get information about spend entry from DB and return Spend struct
 // TODO implement me
-func ReadSpend(id int64) (Spend, error) {
+func (s Spend) ReadSpend(id int64) (Spend, error) {
 	var resultSpend Spend
 
 	return resultSpend, nil
@@ -36,8 +38,8 @@ func ReadSpend(id int64) (Spend, error) {
 
 // UpdateSpend find spend entry in BD by ID and reWrite info from Deposit to DB
 // TODO implement me
-func (s Spend) UpdateSpend() error {
-	return nil
+func (s Spend) UpdateSpend() (Spend, error) {
+	return Spend{}, nil
 }
 
 // DeleteSpend remove spend entry from DB
